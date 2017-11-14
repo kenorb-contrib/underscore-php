@@ -2,7 +2,7 @@
 namespace Underscore\Methods;
 
 use Illuminate\Support\Str;
-use Underscore\Types\String;
+use Underscore\Types\String as BaseString;
 
 /**
  * Methods to manage strings
@@ -48,7 +48,7 @@ class StringMethods extends Str
      */
     public static function randomStrings($words, $length = 10)
     {
-        return String::from('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ')
+        return BaseString::from('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ')
                      ->shuffle()
                      ->split($length)
                      ->slice(0, $words)
